@@ -986,20 +986,31 @@
     <div class="contact-grid">
       <div class="contact-form-wrap reveal-left">
         <h3 style="font-family:var(--font-display);font-size:28px;font-style:italic;color:#111;margin-bottom:24px;">Send a Message</h3>
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Full name" autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Let's build something innovative together..."></textarea>
-        </div>
-        <button type="button" class="form-submit" onclick="handleFormSubmit()">Send Message</button>
-        <p id="form-success" style="display:none;margin-top:16px;font-size:13px;color:#16a34a;font-weight:600;text-align:center;">✓ Message sent! I'll get back to you soon.</p>
+
+        <form action="https://formsubmit.co/himanshusinghaero1122@gmail.com" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Full name" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Let's build something innovative together..." required></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New Message From Himanshu Portfolio">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://himanshusinghaero01122-lang.github.io/himanshu-portfoliooo/">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
       </div>
       <div class="contact-info reveal-right">
         <h3>Open to Opportunities</h3>
@@ -1082,7 +1093,7 @@ const CONFIG = {
   linkedin:  'https://www.linkedin.com/in/himanshu-singh-a36242320?utm_source=share_via&utm_content=profile&utm_medium=member_android',
   github:    'YOUR_GITHUB_URL',
   instagram: 'https://www.instagram.com/himanshu_singhh.7?igsh=cm80MzV3am52YnQ0&igsi=cm80MzV3am52YnQ0',
-  email:     'YOUR_EMAIL',
+  email:     'himanshusinghaero1122@gmail.com',
 };
 
 /* ── Apply config links ── */
@@ -1208,21 +1219,6 @@ window.addEventListener('scroll', () => {
     dw.style.transform = `translateY(${-y}px)`;
   }
 }, { passive: true });
-
-/* ── FORM ── */
-function handleFormSubmit() {
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const msg = document.getElementById('message').value.trim();
-  if (!name || !email || !msg) {
-    alert('Please fill in all fields.');
-    return;
-  }
-  document.getElementById('form-success').style.display = 'block';
-  document.getElementById('name').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('message').value = '';
-}
 
 /* ── Reduced motion ── */
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
